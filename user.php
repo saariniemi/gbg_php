@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 class User {
 
 	private function __construct()
@@ -42,4 +43,5 @@ class User {
 	{
 		return $userForProject;
 	}
+
 }

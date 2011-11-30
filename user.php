@@ -23,7 +23,9 @@ class User {
 
 	private function createUser($username, $password)
 	{
+		save_user($username, $password);
 		
+		return array("status" => true, "username" => $username);
 	}
 
 	private function editUser()

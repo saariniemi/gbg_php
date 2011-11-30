@@ -1,44 +1,56 @@
 <?php
 
-class Project(){
+class Project
+{
 
-	private function __construct(){
+	private function __construct()
+	{
 		
 	}
 
-	private function deleteUserFromProject($userId, $projectId){
+	private function deleteUserFromProject($userId, $projectId)
+	{
 		
 	}
 
-	private function getProjectsForUser($userId){
+	private function getProjectsForUser($userId)
+	{
 		return $projectsForUser;
 	}
 
-	private function changeProjectActivityStatus($projectId){
+	private function changeProjectActivityStatus($projectId)
+	{
 
 	}
 
-	private function getAllProjectsForCustomer($customerId){
+	private function getAllProjectsForCustomer($customerId)
+	{
 		return $allProjectsForCustomer;
 	}
 
-	private function createProject($projectName, $projectEstimated, $projectBudget){
+	private function createProject($projectName, $projectEstimated, $projectBudget)
+	{
 		
 	}
 
-	private function getProject($projectId){
+	private function getProject($projectId)
+	{
 		return $project;
 	}
 
-	private function editProject($projectName, $projectEstimated, $customerId){
+	private function editProject($projectName, $projectEstimated, $customerId)
+	{
 		
 	}
 
-	private function addUserToProject($projectId, $userId){
+	private function addUserToProject($projectId, $userId)
+	{
 		
 	}
 
-	private function addUserRoleToProject($projectId, $roleId, $userId){
+	private function addUserRoleToProject($projectId, $roleId, $userId)
+	{
 		
 	}
+
 }

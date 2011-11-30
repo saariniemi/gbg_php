@@ -1,5 +1,7 @@
-<?php 
-class Customer {
+<?php
+
+class Customer 
+{
 
 	private function __construct()
 	{
@@ -30,4 +32,5 @@ class Customer {
 	{
 		
 	}
+
 }

@@ -1,16 +1,20 @@
 <?php
 
-class Login(){
+class Login
+{
 
-	private function __construct(){
+	private function __construct()
+	{
 		
 	}
 
-	private function login($userEmail, $userPassword){
+	private function login($userEmail, $userPassword)
+	{
 		
 	}
 
-	private function logout($userId){
+	private function logout($userId)
+	{
 		
 	}
 

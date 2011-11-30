@@ -3,7 +3,7 @@
 class Roles
 {
 
-	function __construct()
+	private function __construct()
 	{
 		
 	}

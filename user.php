@@ -1,5 +1,7 @@
-<?php 
-class User {
+<?php
+
+class User 
+{
 
 	private function __construct()
 	{
@@ -23,7 +25,9 @@ class User {
 
 	private function createUser($username, $password)
 	{
+		save_user($username, $password);
 		
+		return array("status" => true, "username" => $username);
 	}
 
 	private function editUser()
@@ -40,4 +44,5 @@ class User {
 	{
 		return $userForProject;
 	}
+
 }

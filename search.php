@@ -1,6 +1,7 @@
 <?php
 
-class Search {
+class Search 
+{
 	
 	private function __construct()
 	{

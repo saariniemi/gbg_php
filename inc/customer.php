@@ -23,6 +23,11 @@ class Customer
 		
 	}
 
+	function customerExists($name) //eventuelt namn, retunerar true eller false
+	{
+		return $var;
+	}
+
 	function getCustomer($customerId)
 	{
 		return $customer;

@@ -1,17 +1,37 @@
 <?php
+
 class LoginFunctions
 {	
 	public function getAllInfo()
 	{
-		$userName = $_POST['username'];
-		$userMail = $_POST['password'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
 		$getAllInfo = array(
-			$userMail,
-			$userName 
+			$username, $password
 		);
+		
 		print json_encode($getAllInfo);
-	}				
+	}
+
+	/*public function checkIfUsernameAndPasswordIsCorrect($username, $password)
+	{
+		$usernameAndPasswordIsCorrect = FALSE;
+
+		$usernameFromDb = //Får username från DB;
+		$passwordFromDb = //Får password från DB;
+
+		if ($username == $usernameFromDb && $password == $passwordFromDb)
+		{
+			return TRUE;
+		}
+		else 
+		{
+			return FALSE;
+		}
+
+		return $usernameAndPasswordIsCorrect;
+	}*/
 }
 
-$test = new LoginFunctions();
-$test->getAllInfo();
+$login = new LoginFunctions();
+$login->getAllInfo();

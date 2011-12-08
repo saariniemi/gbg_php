@@ -1,29 +1,29 @@
-<?php 
+<?php
 
-//cURL
+	//vad har de för struktur?
 
-$url = 'http://www.google.se';
-$json = file_get_contents($url);
-$obj = json_decode($json);
-$obj->id;
-$obj->name;
+	requestJavaBackend();
 
-echo "TEST!!!";
+	function requestJavaBackend()
+	{
+		$handle = curl_init();
+		$url = 'http://192.168.0.133:8080/Tidrapportering-Java-Gbg/resources/user/login';
 
-curl_init();
+		curl_setopt_array(
+			$handle,
+			array(
+				CURLOPT_URL => $url,
+				CURLOPT_POST => true,
+				CURLOPT_POSTFIELDS => 'username=henning&password=mattias',
+				CURLOPT_RETURNTRANSFER => true
+			)
+		);
 
-echo "var dump json";
-var_dump($json); //sökfält
+		$response = curl_exec($handle);
+		
+		echo "<pre>";
+		print_r($response);
+		echo "</pre>";
 
-echo "var dump obj";
-var_dump($obj); //NULL
-
-echo "print r(json)";
-echo "<pre>";
-print_r($json); //sökfält
-echo "</pre>";
-
-echo "print r(obj)";
-echo "<pre>";
-print_r($obj); //syns ej
-echo "</pre>";
+		curl_close($handle);		
+	}

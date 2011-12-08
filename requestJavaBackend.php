@@ -1,8 +1,11 @@
 <?php
 
-	//vad har de för struktur?
-
-	requestJavaBackend();
+class RequestJavaBackend
+{
+	function __construct()
+	{
+		
+	}
 
 	function requestJavaBackend()
 	{
@@ -21,8 +24,9 @@
 
 		$response = curl_exec($handle);
 		curl_close($handle);
-
+		
 		$decodedResponse = json_decode($response, true);
 
 		return $decodedResponse;
 	}
+}

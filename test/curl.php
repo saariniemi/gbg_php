@@ -20,10 +20,9 @@
 		);
 
 		$response = curl_exec($handle);
-		
-		echo "<pre>";
-		print_r($response);
-		echo "</pre>";
+		curl_close($handle);
 
-		curl_close($handle);		
+		$decodedResponse = json_decode($response, true);
+
+		return $decodedResponse;
 	}

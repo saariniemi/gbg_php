@@ -11,13 +11,15 @@ foreach($path_parts as $part){
 	}
 }
 
+
 $path_parts = $parts;
 
-if(isset($path_parts[0])){ $return_format = $path_parts[0]; }
-if(isset($path_parts[1])){ $resource = $path_parts[1]; }
-if(isset($path_parts[2])){ $resource_id = $path_parts[2]; }
-if(isset($path_parts[3])){ $sub_resource = $path_parts[3]; }
-if(isset($path_parts[4])){ $sub_resource_id = $path_parts[4]; }
+if(isset($path_parts[0])){ $return_format 	= $path_parts[0]; } else { $return_format = null; }
+if(isset($path_parts[1])){ $collection 		= $path_parts[1]; } else { $resoucre = null; }
+if(isset($path_parts[2])){ $resource_id 	= $path_parts[2]; } else { $resource_id = null; }
+if(isset($path_parts[3])){ $sub['collection']	= $path_parts[3]; } else { $sub_resource = null; }
+if(isset($path_parts[4])){ $sub['resource_id']	= $path_parts[4]; } else { $sub_resource_id = null; }
+if((!isset($sub['collection']))&&(!isset($sub['resource_id']))) { $sub = null; }
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -34,26 +36,26 @@ switch($method){
         break;
 }
 
-$filename = 'resources/' . $resource . '.php';
+$filename = 'resources/' . $collection . '.php';
 
 if(file_exists($filename)){
 	require_once($filename);
-	if(class_exists("_".$resource)){
-		$class = "_".$resource;
-		$obj = new $class(
-			$method,
-			$args,
-			$resource_id,
-			$sub_resource,
-			$sub_resource_id
-		);
+	if(class_exists("_".$collection)){
+		$class = "_".$collection;
+
+		$obj = new $class($resource_id);
+
+		$obj->$method($args, $sub);
+		
+
 		output($obj, $return_format);
-	}else{ echo "Resource doesn't exist"; }
-}else{ echo "File doesn't exists"; }
+
+	}else{ echo "Resource," . $collection . "doesn't exist"; }
+}else{ echo "File," . $filename .  "doesn't exists"; }
 
 function output($data, $format = 'json'){
 	switch($format){
 		case 'text': print_r($data); break;
-		case 'json': default: echo json_encode($data);
+		case 'json': default: echo json_encode($data); break;
 	}
 }

@@ -2,52 +2,51 @@
 
 class _test{
 
-	public $id,$name,$password;
-
-	function __construct($method = null, $id = null, $args = null){
-		
-		if(in_array($method,array('GET','PUT','DELETE'))){
-			$this->$method($id, $args);
-		}elseif($method == 'POST'){
-			$this->$method($args);
-		}
+	function __construct($id = null){
+		$this->id = $id;
 	}
 	
-	function GET($id){
-		$user = array("id" => 10, "name" => 20, "password" => 30);
+	function GET($args = null, $sub = null){
+		switch($sub['collection']){
+			case 'users':
+				$array = array(
+					'users' => array(
+						array("id" => 10, "name" => 20, "password" => 30),
+						array("id" => 10, "name" => 20, "password" => 30),
+						array("id" => 10, "name" => 20, "password" => 30)
+					)
+				); break;
+			default: $array = array("id" => 10, "name" => 20, "password" => 30);
+		}
 
-		$this->id 		= $user['id'];
-		$this->name 	= $user['name'];
-		$this->password = $user['password'];
+		foreach ($array as $key => $value) {
+    		$this->$key = $value;
+		}
 	}
 
-	function POST(){
-		
+
+	function POST($args){
+		$name = $args['name'];
+		$this->name = $name;
 	}
 
-	function PUT($id, $args){
+	function PUT($args){
+
+		$array = array("id" => 10, "name" => 20, "password" => 30);
 		$allowed_fields = array("name","password");
 
 		foreach($args as $arg => $value){
 			if(in_array($arg,$allowed_fields)){
-				$sql_parts[] = "`$arg` = '$value'";
+				$array[$arg] = $value;
 			}
 		}
-
-		$fields = implode(',',$sql_parts);
-		if($fields){
-			$query = "
-				UPDATE user
-				SET $fields
-				WHERE id=$id
-			";
-			mysql_query($query);
-			$this->GET($id);
-		}
 		
+		foreach ($array as $key => $value) {
+    		$this->$key = $value;
+		}
 	}
 
-	function DELETE($id){
+	function DELETE(){
 		
 	}
 }

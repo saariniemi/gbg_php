@@ -8,6 +8,11 @@ class Project
 		
 	}
 
+	function getProjects()
+	{
+		return $projects;
+	}
+
 	function deleteUserFromProject($userId, $projectId)
 	{
 		
@@ -28,7 +33,7 @@ class Project
 		return $allProjectsForCustomer;
 	}
 
-	function createProject($projectName, $projectEstimated, $projectBudget)
+	function createProject($projectName, $estimate, $projectBudget)
 	{
 		
 	}
@@ -38,7 +43,7 @@ class Project
 		return $project;
 	}
 
-	function editProject($projectName, $projectEstimated, $customerId)
+	function editProject($projectName, $estimate, $customerId)
 	{
 		
 	}

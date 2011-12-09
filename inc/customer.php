@@ -18,7 +18,7 @@ class Customer
 		return $customers;
 	}
 
-	function createCustomer($name)
+	function createCustomer($customerName)
 	{
 		
 	}

@@ -23,11 +23,9 @@ class User
 		return $userRolesInProject;
 	}
 
-	function createUser($username, $password)
+	function createUser($emial, $password, $firstName, $lastName)
 	{
-		save_user($username, $password);
 		
-		return array("status" => true, "username" => $username);
 	}
 
 	function editUser()

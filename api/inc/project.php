@@ -10,6 +10,10 @@ class Project
 
 	function getProjects()
 	{
+		$projects = array(
+				array("id" => 10, "projectName" => 'NS', "progress" => 30, "estimate" => 40, "customerName" => 'Niko Saariniemi', "active" => true),
+				array("id" => 10, "projectName" => 'NS', "progress" => 30, "estimate" => 40, "customerName" => 'Niko Saariniemi', "active" => true)	
+		);
 		return $projects;
 	}
 

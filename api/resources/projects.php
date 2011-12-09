@@ -13,8 +13,11 @@
 		$project = new Project;
 
 		switch($sub['collection']){
-			default: $array = $project->getProjects();
-			default: $array = $project->getProject($id));
+			default: if(isset($id)){
+				$array = $project->getProject($id);
+			} else {
+				$array = $project->getProjects();
+			}
 		}
 
 		foreach ($array as $key => $value) {

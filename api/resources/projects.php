@@ -5,7 +5,7 @@ require_once './inc/project.php';
 
 abstract class Resource{
 	private $obj,$id;
-
+	//ORM = object 
 	function __construct($orm, $id=null){
 		$this->id = $id;
 		$this->obj = new $orm();
@@ -28,7 +28,14 @@ abstract class Resource{
 }
 
 class _projects extends Resource{
+	/*
+	FIXA SUB[COLLECTION] - ?? && ?? 
+	FIXA CURL = ?? && ?? 
+	FIXA ...
+	FIXA ...
+	OM VI KAN FIXA DETTA SÅ HAR VI KOMMIT LITE FRAM!!
 
+	*/
 	function __construct($id = null, $sub = null){			
 		parent::__construct('Project',$id);
 		$this->sub = $sub;

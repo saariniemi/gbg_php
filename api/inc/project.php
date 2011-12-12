@@ -11,8 +11,8 @@ class Project
 	function getProjects()
 	{
 		$projects = array(
-				array("id" => 10, "projectName" => 'NS', "progress" => 30, "estimate" => 40, "customerName" => 'Niko Saariniemi', "active" => true),
-				array("id" => 10, "projectName" => 'NS', "progress" => 30, "estimate" => 40, "customerName" => 'Niko Saariniemi', "active" => true)	
+				array("id" => 10, "projectName" => 'Niko Saariniemi', "progress" => 35, "estimate" => 120, "customerName" => 'Niko ZarraN Saariniemi', "active" => true),
+				array("id" => 20, "projectName" => 'Daniel Brodin', "progress" => 40, "estimate" => 50, "customerName" => 'JS Knugen', "active" => false)	
 		);
 		return $projects;
 	}

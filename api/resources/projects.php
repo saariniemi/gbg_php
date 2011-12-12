@@ -29,10 +29,10 @@ abstract class Resource{
 
 class _projects extends Resource{
 	/*
-	FIXA SUB[COLLECTION] - ?? && ?? 
-	FIXA CURL = ?? && ?? 
-	FIXA ...
-	FIXA ...
+	FIXA SUB[COLLECTION] - Tommy && Peter 
+	FIXA CURL = Niko && PG 
+	FIXA (...)
+	FIXA (...)
 	OM VI KAN FIXA DETTA SÅ HAR VI KOMMIT LITE FRAM!!
 
 	*/

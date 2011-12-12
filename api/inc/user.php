@@ -23,9 +23,27 @@ class User
 		return $userRolesInProject;
 	}
 
-	function createUser($emial, $password, $firstName, $lastName)
+	function createUser($email, $password, $firstname, $lastname)
 	{
+		$url = 'http://';
+		$params = 'username='.$email.'&password='.$password.'&firstname='.$firstname.'&lastname'.$lastname;
+
+		$handle = curl_init();
+
+		curl_setopt_array(
+			$handle,
+			array(
+				CURLOPT_URL => $url,
+				CURLOPT_POST => true,
+				CURLOPT_POSTFIELDS => $params,
+				CURLOPT_RETURNTRANSFER => true
+			)
+		);
+
+		$response = curl_exec($handle);
+		curl_close($handle);
 		
+		$decodedResponse = json_decode($response, true);
 	}
 
 	function editUser()

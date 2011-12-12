@@ -7,17 +7,16 @@ class RequestJavaBackend
 		
 	}
 
-	function requestJavaBackend()
+	function requestJavaBackend($url, $params)
 	{
 		$handle = curl_init();
-		$url = 'http://192.168.0.133:8080/Tidrapportering-Java-Gbg/resources/user/login';
 
 		curl_setopt_array(
 			$handle,
 			array(
 				CURLOPT_URL => $url,
 				CURLOPT_POST => true,
-				CURLOPT_POSTFIELDS => 'username=henning&password=mattias',
+				CURLOPT_POSTFIELDS => $params,
 				CURLOPT_RETURNTRANSFER => true
 			)
 		);

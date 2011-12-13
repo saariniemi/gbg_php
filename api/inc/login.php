@@ -13,10 +13,11 @@ class Login
 	function login($email, $password)
 	{
 		$arr = array('email' => $email, 'password' => $password);
-		$params = json_encode($arr);
+		$params = 'email=test.com&password=testar';
+		//Skapa en funktion som gör om en array till en sträng: para1=val1&para2=val2&
 
 		$obj = new RequestJavaBackend;
-		$response = $obj->requestJavaBackend($params);
+		$response = $obj->requestJavaBackend($params); //skicka med array istället för sträng
 
 		return $response;
 	}
@@ -27,4 +28,3 @@ class Login
 	}
 
 }
-

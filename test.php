@@ -2,10 +2,10 @@
 
 require_once 'api/inc/login.php';
 
-$email = 'test@test.com';
+$email = 'test.com';
 $password = 'testar';
 
 $obj = new Login;
 $test = $obj->login($email, $password);
 
-var_dump($test);
+echo $test;

@@ -1,9 +1,5 @@
 <?php
 
-require_once './requireJavaBackend.php';
-
-//Extenda RequireJavaBackend istället? Niko är emot!
-
 class User 
 {
 
@@ -27,17 +23,9 @@ class User
 		return $userRolesInProject;
 	}
 
-	function createUser($email, $password, $firstname, $lastname)
+	function createUser($email, $password, $firstName, $lastName)
 	{
 
-		$obj = new RequestJavaBackend;
-
-		$url = 'http://';
-		$params = 'username='.$email.'&password='.$password.'&firstname='.$firstname.'&lastname'.$lastname;
-
-		//POST när man skapar = Räcker att kalla på funktionen
-
-		$obj->requireJavaBackend($url, $params);
 	}
 
 	function editUser()

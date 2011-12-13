@@ -1,5 +1,9 @@
 <?php
 
+require_once './requireJavaBackend.php';
+
+//Extenda RequireJavaBackend istället? Niko är emot!
+
 class User 
 {
 
@@ -25,25 +29,15 @@ class User
 
 	function createUser($email, $password, $firstname, $lastname)
 	{
+
+		$obj = new RequestJavaBackend;
+
 		$url = 'http://';
 		$params = 'username='.$email.'&password='.$password.'&firstname='.$firstname.'&lastname'.$lastname;
 
-		$handle = curl_init();
+		//POST när man skapar = Räcker att kalla på funktionen
 
-		curl_setopt_array(
-			$handle,
-			array(
-				CURLOPT_URL => $url,
-				CURLOPT_POST => true,
-				CURLOPT_POSTFIELDS => $params,
-				CURLOPT_RETURNTRANSFER => true
-			)
-		);
-
-		$response = curl_exec($handle);
-		curl_close($handle);
-		
-		$decodedResponse = json_decode($response, true);
+		$obj->requireJavaBackend($url, $params);
 	}
 
 	function editUser()

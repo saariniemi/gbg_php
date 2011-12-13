@@ -1,6 +1,6 @@
 <?php
 
-require_once './api/inc/requestJavaBackend.php';
+require_once 'requestJavaBackend.php';
 
 class Login
 {
